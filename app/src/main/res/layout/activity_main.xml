@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tooldbar"
+        app:title="@string/app_name"
+        app:titleTextColor="@android:color/white"
+        android:background="@color/colorPrimary"
+        app:menu="@menu/search_menu"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:padding="5dp"
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tooldbar"
+        android:textColor="@android:color/black"
+        android:drawableEnd="@drawable/ic_location_on_black_24"
+        android:drawableTint="@android:color/black"
+        android:text="Choose your Location"
+        android:background="#FAFAFA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_search_black_24" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="497dp"
+        android:layout_below="@+id/textView" />
+    <TextView
+        android:id="@+id/make_request_button"
+        android:text="Make a Request"
+        android:layout_alignBottom="@id/recyclerView"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:textAlignment="center"
+        android:padding="16dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+
+
+
+</RelativeLayout>
