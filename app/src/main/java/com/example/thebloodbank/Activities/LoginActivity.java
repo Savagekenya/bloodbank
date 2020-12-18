@@ -1,6 +1,8 @@
 package com.example.thebloodbank.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceManager;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -36,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         numberET=findViewById(R.id.number);
         passwordET=findViewById(R.id.password);
-        submit_button=findViewById(R.id.submit_button);
+        submit_button=(Button)findViewById(R.id.submit_button);
         signUpText=findViewById(R.id.sign_up_text);
         signUpText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.equals("Success")){
                     Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                    PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("number",number).apply();
                     LoginActivity.this.finish();
                 }else{
                     Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();

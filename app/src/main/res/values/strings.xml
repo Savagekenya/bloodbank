@@ -2,4 +2,5 @@
     <string name="app_name">The Blood Bank</string>
     <string name="sign_up"><u>Sign Up</u></string>
     <string name="sign_up_text">sign_up_text</string>
+    <string name="choose_image"><u>Choose Image</u></string>
 </resources>

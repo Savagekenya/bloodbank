@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.thebloodbank.Activities.Adapters.RequestAdapters;
 import com.example.thebloodbank.Activities.DataModels.RequestDataModel;
@@ -26,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView make_request_button = findViewById(R.id.make_request_button);
+        make_request_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,MakeRequestActivity.class));
+            }
+        });
         requestDataModels= new ArrayList<>();
         Toolbar toolbar=findViewById(R.id.toolbar);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
